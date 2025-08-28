@@ -13,22 +13,22 @@
         http://mybatis.org/schema/mybatis-spring
         http://mybatis.org/schema/mybatis-spring.xsd">
 
-    <!-- ✅ 컴포넌트 스캔 -->
+
     <context:component-scan base-package="com.demo.devfun"/>
     <context:annotation-config/>
 
-    <!-- ✅ Spring MVC 설정 -->
+
     <mvc:annotation-driven />
     <mvc:default-servlet-handler/>
     <mvc:resources mapping="/resources/**" location="/resources/" />
 
-    <!-- ✅ View Resolver -->
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/view/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!-- ✅ JSON View -->
+
     <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
         <property name="contentType" value="text/html; charset=UTF-8"/>
     </bean>
@@ -37,6 +37,6 @@
         <property name="order" value="0"/>
     </bean>
 
-    <!-- ✅ DB 설정 파일 import -->
+
     <import resource="classpath*:applicationContext-datasource.xml"/>
 </beans>
